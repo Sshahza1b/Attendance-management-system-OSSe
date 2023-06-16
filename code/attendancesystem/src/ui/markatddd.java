@@ -1,4 +1,4 @@
-package ui;
+package UI;
 
 
 
@@ -14,7 +14,7 @@ package ui;
 public class markatddd extends javax.swing.JFrame {
 
     /**
-     * Creates new form 
+     * Creates new form markatddd
      */
     public markatddd() {
         initComponents();
@@ -37,18 +37,19 @@ public class markatddd extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
+        buttonhome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Savebutton.setBackground(new java.awt.Color(0, 153, 153));
         Savebutton.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         Savebutton.setForeground(new java.awt.Color(255, 255, 255));
         Savebutton.setText("Save");
-        jPanel1.add(Savebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 580, -1, -1));
+        jPanel1.add(Savebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 670, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -73,64 +74,53 @@ public class markatddd extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
         jTable1.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 750, 420));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 610, 380));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel3.setText("Select class");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 70, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 70, 20));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Object Oriented Software Engineering", "Web Technology", "Database system 1" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 80, 250, -1));
+        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 170, 250, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
         jLabel4.setText("Select Subject");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BSE -4A(Theory)", "BSE-4A(Lab)", "BSE -4B(Theory)", "BSE-4B(Lab)" }));
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 250, -1));
+        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, 250, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1350, 760));
+        buttonhome.setBackground(new java.awt.Color(0, 101, 101));
+        buttonhome.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        buttonhome.setForeground(new java.awt.Color(255, 255, 255));
+        buttonhome.setText("Home");
+        buttonhome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonhomeActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 650, 160, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonhomeActionPerformed
+        // TODO add your handling code here:
+        Dashboard d = new Dashboard();
+        d.show();
+        dispose();
+    }//GEN-LAST:event_buttonhomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(markatddd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(markatddd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(markatddd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(markatddd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new markatddd().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Savebutton;
+    private javax.swing.JButton buttonhome;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel3;

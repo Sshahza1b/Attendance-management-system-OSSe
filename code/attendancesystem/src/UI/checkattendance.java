@@ -11,12 +11,12 @@ package UI;
  *
  * @author MUHAMMAD SHAHZEB
  */
-public class communicateteacher extends javax.swing.JFrame {
+public class checkattendance extends javax.swing.JFrame {
 
     /**
-     * Creates new form communicateteacher
+     * Creates new form checkattendance
      */
-    public communicateteacher() {
+    public checkattendance() {
         initComponents();
     }
 
@@ -48,19 +48,16 @@ public class communicateteacher extends javax.swing.JFrame {
         CCbutton = new javax.swing.JButton();
         logoutpanel = new javax.swing.JPanel();
         logoutbutton = new javax.swing.JButton();
-        rightpanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        logoutpanel1 = new javax.swing.JPanel();
-        logoutbutton1 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        sidepanel = new javax.swing.JPanel();
+        crnamefield1 = new javax.swing.JTextField();
+        newnamefield1 = new javax.swing.JTextField();
+        crpasswordefield1 = new javax.swing.JTextField();
+        newpasswordefield1 = new javax.swing.JTextField();
+        cenamelabel = new javax.swing.JLabel();
+        newnamelabel1 = new javax.swing.JLabel();
+        crpassword1 = new javax.swing.JLabel();
+        newpassword1 = new javax.swing.JLabel();
+        update = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -152,7 +149,7 @@ public class communicateteacher extends javax.swing.JFrame {
         });
         panelhome.add(buttonhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 100, -1));
 
-        sidepael.add(panelhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 210, 50));
+        sidepael.add(panelhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 200, 50));
 
         mapanel.setBackground(new java.awt.Color(0, 102, 102));
         mapanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
@@ -220,83 +217,41 @@ public class communicateteacher extends javax.swing.JFrame {
         });
         logoutpanel.add(logoutbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 170, -1));
 
-        sidepael.add(logoutpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 210, 50));
+        sidepael.add(logoutpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 210, 50));
 
-        getContentPane().add(sidepael, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 660));
+        getContentPane().add(sidepael, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 270, 630));
 
-        rightpanel.setBackground(new java.awt.Color(0, 153, 153));
-        rightpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        sidepanel.setBackground(new java.awt.Color(0, 153, 153));
+        sidepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        sidepanel.add(crnamefield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 270, 30));
+        sidepanel.add(newnamefield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 270, 30));
+        sidepanel.add(crpasswordefield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 270, 30));
+        sidepanel.add(newpasswordefield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 270, 30));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel3.setText("Teacher  Name");
-        rightpanel.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 90, 20));
+        cenamelabel.setBackground(new java.awt.Color(255, 255, 255));
+        cenamelabel.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        cenamelabel.setText("Class ");
+        sidepanel.add(cenamelabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, -1, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel5.setText("Select Class");
-        rightpanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 100, 80, -1));
+        newnamelabel1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        newnamelabel1.setText("Section");
+        sidepanel.add(newnamelabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 60, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BSE 1A", "BCS 1A", "PHR 1A", "EEE 1A", "BSE 2A", "BCS 2A", "PHR 2A", "EEE 2A", "BSE 3A", "BCS 3A", "PHR 3A", "EEE 3A", "BSE 4A", "BCS 4A", "PHR 4A", "EEE 4A", "BSE 5A", "BCS 5A", "PHR 5A", "EEE 5A", "BSE 6A", "BCS 6A", "PHR 6A", "EEE 6A", "BSE 7A", "BCS 7A", "PHR 7A", "EEE 7A", "BSE 8A", "BCS 8A", "PHR 8A", "EEE 8A", "BSE 1B", "BCS 1B", "PHR 1B", "EEE 1B", "BSE 2B", "BCS 2B", "PHR 2B", "EEE 2B", "BSE 3B", "BCS 3B", "PHR 3B", "EEE 3B", "BSE 4B", "BCS 4B", "PHR 4B", "EEE 4B", "BSE 5B", "BCS 5B", "PHR 5B", "EEE 5B", "BSE 6B", "BCS 6B", "PHR 6B", "EEE 6B", "BSE 7B", "BCS 7B", "PHR 7B", "EEE 7B", "BSE 8B", "BCS 8B", "PHR 8B", "EEE 8B", "BSE 1C", "BCS 1C", "PHR 1C", "EEE 1C", "BSE 2C", "BCS 2C", "PHR 2C", "EEE 2C", "BSE 3C", "BCS 3C", "PHR 3C", "EEE 3C", "BSE 4C", "BCS 4C", "PHR 4C", "EEE 4C", "BSE 5C", "BCS 5C", "PHR 5C", "EEE 5C", "BSE 6C", "BCS 6C", "PHR 6C", "EEE 6C", "BSE 7C", "BCS 7C", "PHR 7C", "EEE 7C", "BSE 8C", "BCS 8C", "PHR 8C", "EEE 8C", "BSE 1D", "BCS 1D", "PHR 1D", "EEE 1D", "BSE 2D", "BCS 2D", "PHR 2D", "EEE 2D", "BSE 3D", "BCS 3D", "PHR 3D", "EEE 3D", "BSE 4D", "BCS 4D", "PHR 4D", "EEE 4D", "BSE 5D", "BCS 5D", "PHR 5D", "EEE 5D", "BSE 6D", "BCS 6D", "PHR 6D", "EEE 6D", "BSE 7D", "BCS 7D", "PHR 7D", "EEE 7D", "BSE 8D", "BCS 8D", "PHR 8D", "EEE 8D" }));
-        rightpanel.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 250, -1));
+        crpassword1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        crpassword1.setText("Student Name");
+        sidepanel.add(crpassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 120, 30));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        rightpanel.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 250, -1));
+        newpassword1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        newpassword1.setText("Registration");
+        sidepanel.add(newpassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 390, 110, 30));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel6.setText("Student ID");
-        rightpanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 80, -1));
+        update.setBackground(new java.awt.Color(0, 153, 153));
+        update.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        update.setForeground(new java.awt.Color(255, 255, 255));
+        update.setText("Check");
+        sidepanel.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 510, -1, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
-            }
-        });
-        rightpanel.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 250, -1));
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel7.setText("Reason");
-        rightpanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 80, -1));
-
-        jTextField5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
-        rightpanel.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 302, 550, 250));
-
-        logoutpanel1.setBackground(new java.awt.Color(0, 153, 153));
-        logoutpanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
-        logoutpanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        logoutbutton1.setBackground(new java.awt.Color(0, 152, 152));
-        logoutbutton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        logoutbutton1.setForeground(new java.awt.Color(255, 255, 255));
-        logoutbutton1.setText("Send");
-        logoutbutton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutbutton1ActionPerformed(evt);
-            }
-        });
-        logoutpanel1.add(logoutbutton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 170, -1));
-
-        rightpanel.add(logoutpanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 590, 210, 50));
-
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        rightpanel.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 250, -1));
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
-        jLabel8.setText("Name");
-        rightpanel.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 80, -1));
-
-        getContentPane().add(rightpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 640, 660));
+        getContentPane().add(sidepanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 0, 750, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -319,7 +274,7 @@ public class communicateteacher extends javax.swing.JFrame {
 
     private void buttonhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonhomeActionPerformed
         // TODO add your handling code here:
-        Pdashboard d = new Pdashboard();
+        Dashboard d = new Dashboard();
         d.show();
         dispose();
     }//GEN-LAST:event_buttonhomeActionPerformed
@@ -340,30 +295,10 @@ public class communicateteacher extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logoutbuttonActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void logoutbutton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbutton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_logoutbutton1ActionPerformed
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-   
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CAbutton;
@@ -379,24 +314,21 @@ public class communicateteacher extends javax.swing.JFrame {
     private javax.swing.JButton SSbutton;
     private javax.swing.JPanel SSpanel;
     private javax.swing.JButton buttonhome;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JLabel cenamelabel;
+    private javax.swing.JTextField crnamefield1;
+    private javax.swing.JLabel crpassword1;
+    private javax.swing.JTextField crpasswordefield1;
     private javax.swing.JButton logoutbutton;
-    private javax.swing.JButton logoutbutton1;
     private javax.swing.JPanel logoutpanel;
-    private javax.swing.JPanel logoutpanel1;
     private javax.swing.JButton mabutton;
     private javax.swing.JPanel mapanel;
+    private javax.swing.JTextField newnamefield1;
+    private javax.swing.JLabel newnamelabel1;
+    private javax.swing.JLabel newpassword1;
+    private javax.swing.JTextField newpasswordefield1;
     private javax.swing.JPanel panelhome;
-    private javax.swing.JPanel rightpanel;
     private javax.swing.JPanel sidepael;
+    private javax.swing.JPanel sidepanel;
+    private javax.swing.JButton update;
     // End of variables declaration//GEN-END:variables
 }

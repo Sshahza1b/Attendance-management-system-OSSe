@@ -1,4 +1,4 @@
-package ui;
+package UI;
 
 
 
@@ -14,7 +14,7 @@ package ui;
 public class viewatd extends javax.swing.JFrame {
 
     /**
-     * Creates new form viewatd
+     * Creates new form
      */
     public viewatd() {
         initComponents();
@@ -39,6 +39,7 @@ public class viewatd extends javax.swing.JFrame {
         crpassword1 = new javax.swing.JLabel();
         newpassword1 = new javax.swing.JLabel();
         update = new javax.swing.JButton();
+        buttonhome = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -73,47 +74,36 @@ public class viewatd extends javax.swing.JFrame {
         update.setText("Check");
         sidepanel.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, -1, -1));
 
+        buttonhome.setBackground(new java.awt.Color(0, 101, 101));
+        buttonhome.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        buttonhome.setForeground(new java.awt.Color(255, 255, 255));
+        buttonhome.setText("Home");
+        buttonhome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonhomeActionPerformed(evt);
+            }
+        });
+        sidepanel.add(buttonhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 100, -1));
+
         getContentPane().add(sidepanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonhomeActionPerformed
+        // TODO add your handling code here:
+        Pdashboard d = new Pdashboard();
+        d.show();
+        dispose();
+    }//GEN-LAST:event_buttonhomeActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(viewatd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(viewatd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(viewatd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(viewatd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new viewatd().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonhome;
     private javax.swing.JLabel cenamelabel;
     private javax.swing.JTextField crnamefield1;
     private javax.swing.JLabel crpassword1;

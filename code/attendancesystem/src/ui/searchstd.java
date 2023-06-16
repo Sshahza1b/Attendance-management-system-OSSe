@@ -1,4 +1,4 @@
-package ui;
+package UI;
 
 
 
@@ -13,7 +13,7 @@ public class searchstd extends javax.swing.JFrame {
         initComponents();
     }
 
-//    Dashboard d = new Dashboard();
+    Dashboard d = new Dashboard();
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -119,7 +119,7 @@ public class searchstd extends javax.swing.JFrame {
 
         CApanel.add(CApanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 280, 50));
 
-        sidepael.add(CApanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 230, 50));
+        sidepael.add(CApanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 260, 50));
 
         logoutpanel.setBackground(new java.awt.Color(0, 102, 102));
         logoutpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
@@ -136,7 +136,7 @@ public class searchstd extends javax.swing.JFrame {
         });
         logoutpanel.add(logoutbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 170, -1));
 
-        sidepael.add(logoutpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 260, 50));
+        sidepael.add(logoutpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 280, 50));
 
         panelhome.setBackground(new java.awt.Color(0, 102, 102));
         panelhome.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
@@ -153,7 +153,7 @@ public class searchstd extends javax.swing.JFrame {
         });
         panelhome.add(buttonhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 160, -1));
 
-        sidepael.add(panelhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 240, 50));
+        sidepael.add(panelhome, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 260, 50));
 
         mapanel.setBackground(new java.awt.Color(0, 102, 102));
         mapanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
@@ -170,7 +170,7 @@ public class searchstd extends javax.swing.JFrame {
         });
         mapanel.add(mabutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 170, -1));
 
-        sidepael.add(mapanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 240, 50));
+        sidepael.add(mapanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 260, 50));
 
         SSpanel.setBackground(new java.awt.Color(0, 102, 102));
         SSpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
@@ -187,7 +187,7 @@ public class searchstd extends javax.swing.JFrame {
         });
         SSpanel.add(SSbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 170, -1));
 
-        sidepael.add(SSpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 240, 50));
+        sidepael.add(SSpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 260, 50));
 
         Ccpanel.setBackground(new java.awt.Color(0, 102, 102));
         Ccpanel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, java.awt.Color.white, null, null));
@@ -204,9 +204,9 @@ public class searchstd extends javax.swing.JFrame {
         });
         Ccpanel.add(CCbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 170, -1));
 
-        sidepael.add(Ccpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 230, 50));
+        sidepael.add(Ccpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 260, 50));
 
-        getContentPane().add(sidepael, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 310, 720));
+        getContentPane().add(sidepael, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, 720));
 
         rightpanel.setBackground(new java.awt.Color(0, 153, 153));
         rightpanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -243,9 +243,9 @@ public class searchstd extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        rightpanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 177, 560, 490));
+        rightpanel.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 217, 560, 450));
 
-        getContentPane().add(rightpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 760, 720));
+        getContentPane().add(rightpanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 720, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,9 +263,9 @@ public class searchstd extends javax.swing.JFrame {
 
     private void buttonhomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonhomeActionPerformed
         // TODO add your handling code here: 
-//        Dashboard d = new Dashboard();
-//        d.show();
-//        dispose();
+        Dashboard d = new Dashboard();
+        d.show();
+        dispose();
     }//GEN-LAST:event_buttonhomeActionPerformed
 
     private void mabuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mabuttonActionPerformed
@@ -300,43 +300,7 @@ public class searchstd extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public void search(String name , String sec){
     
-    }
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(searchstd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(searchstd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(searchstd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(searchstd.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new searchstd().setVisible(true);
-            }
-        });
-       
-        
-    
-    }   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CAbutton;
