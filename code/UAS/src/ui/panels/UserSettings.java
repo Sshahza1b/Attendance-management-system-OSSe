@@ -3,23 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ui.panels;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.UASController;
 
 public class UserSettings extends JPanel {
+
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JCheckBox notificationsCheckbox;
     private JButton saveButton;
-    JLabel usernameLabel ;
-        JLabel passwordLabel ;
+    JLabel usernameLabel;
+    JLabel passwordLabel;
 
     public UserSettings() {
-        initializeComponents();
-        setupLayout();
-        setupListeners();
+        
+            initializeComponents();
+            setupLayout();
+            setupListeners();
+        
     }
 
     private void initializeComponents() {

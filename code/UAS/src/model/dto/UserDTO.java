@@ -4,6 +4,10 @@
  */
 package model.dto;
 
+/**
+ *
+ * @author fawad
+ */
 public class UserDTO {
 
     private String username;

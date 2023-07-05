@@ -4,20 +4,20 @@ import org.jfree.chart.*;
 import org.jfree.chart.plot.*;
 import org.jfree.chart.renderer.category.*;
 import org.jfree.data.category.*;
-import com.formdev.flatlaf.FlatLightLaf;
 
 import javax.swing.*;
 import java.awt.*;
+import model.UASController;
 
 public class Reports extends JPanel {
 
     private JLabel titleLabel;
 
     public Reports() {
-        FlatLightLaf.install();
 
         initializeComponents();
         setupLayout();
+
     }
 
     private void initializeComponents() {

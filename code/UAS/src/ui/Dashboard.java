@@ -2,43 +2,53 @@ package ui;
 
 import ui.panels.UserSettings;
 import ui.panels.Home;
-import ui.panels.attendance.ViewAttendance;
-import ui.panels.attendance.ModifyAttendance;
-import ui.panels.attendance.DeleteAttendance;
-import ui.panels.attendance.AddAttendance;
+import ui.panels.ViewAttendance;
+import ui.panels.ModifyAttendance;
+import ui.panels.DeleteAttendance;
+import ui.panels.AddAttendance;
 import ui.panels.Reports;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.UASController;
 import ui.panels.LoginUI;
 
-
 public class Dashboard extends JFrame {
-    
 
     private JPanel headerPanel;
     private JPanel menuPanel;
     private JPanel contentPanel;
 
+    public static void main(String[] args) {
+        new Dashboard().setVisible(true);
+    }
+
     public Dashboard() {
-        
-        setTitle("Attendance Management System - Dashboard");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(800, 600));
-        setLayout(new BorderLayout());
+        if (!UASController.isUserLoggedIn()) {
+            LoginUI loginScreen = new LoginUI();
+            loginScreen.setVisible(true);
+            this.setVisible(false);
+            this.dispose();
+        } else {
 
-        // Header Panel
-        createHeaderPanel();
+            setTitle("Attendance Management System - Dashboard");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setExtendedState(JFrame.MAXIMIZED_BOTH);
+            setLayout(new BorderLayout());
 
-        // Menu Panel
-        createMenuPanel();
+            // Header Panel
+            createHeaderPanel();
 
-        // Content Panel
-        createContentPanel();
+            // Menu Panel
+            createMenuPanel();
 
-        pack();
-        setLocationRelativeTo(null);
+            // Content Panel
+            createContentPanel();
+
+            pack();
+            setLocationRelativeTo(null);
+        }
     }
 
     private void createHeaderPanel() {
@@ -48,13 +58,13 @@ public class Dashboard extends JFrame {
         headerPanel.setPreferredSize(new Dimension(800, 75));
         add(headerPanel, BorderLayout.NORTH);
 
-        JLabel titleLabel = new JLabel("Attendance Management System");
+        JLabel titleLabel = new JLabel("Attendance Management System" + "          " + UASController.objApplicationSession.UserName);
         titleLabel.setForeground(new Color(250, 250, 250));
         titleLabel.setFont(new Font("Arial", Font.BOLD, 24));
         titleLabel.setVerticalAlignment(SwingConstants.CENTER);
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        
-        headerPanel.add(titleLabel,BorderLayout.CENTER);
+
+        headerPanel.add(titleLabel, BorderLayout.CENTER);
     }
 
     private void createMenuPanel() {
@@ -99,8 +109,7 @@ public class Dashboard extends JFrame {
         logoutButton.setFont(new Font("Arial", Font.BOLD, 12));
         logoutButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         logoutButton.putClientProperty("JButton.buttonType", "roundRect"); // Use roundRect button type
-        logoutButton.putClientProperty("JButton.selectedBackground", new Color(52, 152, 219)); 
-        
+        logoutButton.putClientProperty("JButton.selectedBackground", new Color(52, 152, 219));
 
         // Add ActionListener to handle logout functionality
         logoutButton.addActionListener(new ActionListener() {
@@ -123,8 +132,7 @@ public class Dashboard extends JFrame {
         button.setFont(new Font("Arial", Font.BOLD, 14));
         button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         button.putClientProperty("JButton.buttonType", "roundRect"); // Use roundRect button type
-        button.putClientProperty("JButton.selectedBackground", new Color(52, 152, 219)); 
-        
+        button.putClientProperty("JButton.selectedBackground", new Color(52, 152, 219));
 
         // Hover Effect
         button.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -139,25 +147,78 @@ public class Dashboard extends JFrame {
 
                 contentPanel.removeAll();
                 if (buttonText.equals("Home")) {
-                    Home homePanel = new Home();
-                    contentPanel.add(homePanel);
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        Home homePanel = new Home();
+                        contentPanel.add(homePanel);
+                    }
                 } else if (buttonText.equals("Add Attendance")) {
-                    contentPanel.add(new AddAttendance());
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        contentPanel.add(new AddAttendance());
+                    }
+                    
 
                 } else if (buttonText.equals("View Attendance")) {
-                    contentPanel.add(new ViewAttendance());
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        contentPanel.add(new ViewAttendance());
+                    }
+                    
 
                 } else if (buttonText.equals("Delete Attendance")) {
-                    contentPanel.add(new DeleteAttendance());
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        contentPanel.add(new DeleteAttendance());
+                    }
 
                 } else if (buttonText.equals("Modify Attendance")) {
-                    contentPanel.add(new ModifyAttendance());
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        contentPanel.add(new ModifyAttendance());
+                    }
 
                 } else if (buttonText.equals("User Settings")) {
-                    contentPanel.add(new UserSettings());
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        contentPanel.add(new UserSettings());
+                    }
+                    
 
                 } else if (buttonText.equals("Reports")) {
-                    contentPanel.add(new Reports());
+                    if (UASController.isSessionExpired()) {
+                        dispose();
+                        LoginUI loginScreen = new LoginUI();
+                        loginScreen.setVisible(true);
+
+                    } else {
+                        contentPanel.add(new Reports());
+                    }
+                    
 
                 }
                 contentPanel.revalidate();

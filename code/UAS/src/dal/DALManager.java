@@ -1,6 +1,5 @@
 package dal;
 
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Connection;
@@ -9,20 +8,11 @@ import model.dto.MessageType;
 import model.dto.Response;
 import model.dto.UserDTO;
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-/**
- *
- * @author fawad
- */
 public class DALManager {
     MySQLConnection mySQL;
     
     public DALManager(){
-        mySQL=new MySQLConnection("jdbc:mysql://localhost:3306/attendance","root","12345");
+        mySQL=new MySQLConnection("jdbc:mysql://localhost:3306/mydb","root","12345");
     }
     
     public void verifyUser(UserDTO user,Response responseObj){
@@ -62,5 +52,4 @@ public class DALManager {
             }
         }
     }
-    
 }

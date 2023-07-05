@@ -1,1 +1,0 @@
-SELECT * FROM attendance.user;
