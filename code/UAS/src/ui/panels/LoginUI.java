@@ -10,14 +10,17 @@ import model.UASController;
 import model.UASFactory;
 import model.dto.Response;
 import model.dto.UserDTO;
+import ui.StudentDashboard;
 
 public class LoginUI extends JFrame {
+
     private JTextField usernameField;
     private JPasswordField passwordField;
+    JComboBox<String> roleComboBox;
     public UASController controllerObj;
 
     public LoginUI() {
-        controllerObj=UASFactory.getUASControllerInstance();
+        controllerObj = UASFactory.getUASControllerInstance();
         FlatLightLaf.install();
         setTitle("UAS - Login");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,7 +57,7 @@ public class LoginUI extends JFrame {
         gbc.gridy = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         usernameField = new JTextField(20);
-        usernameField.setText("admin");
+        usernameField.setText("basit");
         usernameField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -77,9 +80,8 @@ public class LoginUI extends JFrame {
         loginButton.setFont(new Font("Arial", Font.BOLD, 12));
         loginButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         loginButton.putClientProperty("JButton.buttonType", "roundRect"); // Use roundRect button type
-        loginButton.putClientProperty("JButton.selectedBackground", new Color(52, 152, 219)); 
-        
-        
+        loginButton.putClientProperty("JButton.selectedBackground", new Color(52, 152, 219));
+
         passwordField.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,13 +89,22 @@ public class LoginUI extends JFrame {
             }
         });
         mainPanel.add(passwordField, gbc);
-
+        String[] roleOptions = {"admin", "faculty", "student"};
+        roleComboBox = new JComboBox<>(roleOptions);
+// Existing code...
         gbc.gridx = 0;
         gbc.gridy++;
-        gbc.gridwidth = 2;
+        JLabel roleLabel = new JLabel("Role:");
+        mainPanel.add(roleLabel, gbc);
+        gbc.gridx = 1;
+        mainPanel.add(roleComboBox, gbc);
+
+        gbc.gridx = 1;
+        gbc.gridy++;
+        gbc.gridwidth = 1;
         gbc.anchor = GridBagConstraints.CENTER;
-        
-        
+
+// Existing code...
         loginButton.setFocusPainted(false);
         loginButton.setFont(new Font("Arial", Font.BOLD, 16));
         mainPanel.add(loginButton, gbc);
@@ -103,14 +114,27 @@ public class LoginUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String username = usernameField.getText();
                 String password = new String(passwordField.getPassword());
+                String role = (String)roleComboBox.getSelectedItem();
                 // Perform authentication logic here
-                UserDTO user=new UserDTO(username,password);
-                Response responseObj=UASFactory.getResponseInstance();
-                controllerObj.verifyUser(user,responseObj);
+                UserDTO user = new UserDTO(username, password, role);
+                Response responseObj = UASFactory.getResponseInstance();
+                controllerObj.verifyUser(user, responseObj);
                 if (responseObj.isSuccessfull()) {
-                    dispose(); // Close the login window
-                    new Dashboard().setVisible(true);
-                    
+                    switch (UASController.objApplicationSession.getRole()) {
+                        case "admin":
+                            dispose();
+                            JOptionPane.showConfirmDialog(null, "Welcome to Admin");
+                            break;
+                        case "faculty":
+                            dispose();
+                            new Dashboard().setVisible(true);
+                            break;
+                        case "student":
+                            dispose();
+                            new StudentDashboard().setVisible(true);
+                            break;
+                    }
+
                 } else {
                     JOptionPane.showMessageDialog(rootPane, responseObj.getErrorMessages(), "Error Message", HEIGHT);
                 }
