@@ -1,0 +1,39 @@
+How to run our project
+
+Step 1:
+
+download our code as zip file
+
+step 2:
+ 
+extract the zip
+ 
+step 3:
+
+open netbean (open project from code folder)
+open AMS project
+
+step 4:
+
+project show errors as we use built in laibries for our gui and for graps , time table etc
+
+so to solve these erros add laibries from external laibries folder 
+
+how to add these laibries
+click laibreis then select jar files and then add .
+
+step 4:
+
+open mysql:
+
+open our sql quries from my sql folder then connect it.
+
+by follow these steps you should run our project eaisly.
+
+and the end when you login then login want email or password
+so use these
+1) email : shahzaib@gmail.com
+   password: root
+
+2) email: shamsa@gmail.com
+    password: 1234   
