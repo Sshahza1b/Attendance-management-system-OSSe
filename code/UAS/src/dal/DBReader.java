@@ -6,24 +6,129 @@
 package dal;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.SQLException;
+import model.dto.ClassDTO;
+import model.dto.CourseDTO;
+import model.dto.Message;
+import model.dto.MessageType;
+import model.dto.Response;
+import model.dto.TeacherDTO;
+import model.dto.UserDTO;
 
 /**
  *
- * @author fawad
+ * @author shahzaib
  */
 public class DBReader {
 
-    ResultSet getRecords(String dblQuery,Connection conn) {
+    ResultSet getUser(Response responseObj, UserDTO user, Connection connection, String query) {
+        PreparedStatement statement = null;
+
         try {
-            Statement statement = conn.createStatement();
-            return statement.executeQuery(dblQuery);            
-        }
-        catch (Exception e) {
-            System.out.println("Error Trace in getRecords() : " + e.getMessage());
+            statement = connection.prepareStatement(query);
+            statement.setString(1, user.getEmail());
+            statement.setString(2, user.getPassword());
+            return statement.executeQuery();
+        } catch (Exception ex) {
+            responseObj.messagesList.add(new Message(ex.getMessage(), MessageType.Exception));
+
         }
         return null;
     }
+
+
+    ResultSet getRecords(Connection connection, Response responseObj,String query) {
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(query);
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            responseObj.messagesList.add(new Message(e.getMessage(), MessageType.Exception));
+        }
+        return null;
+    }
+
     
+
+    ResultSet getTeacher(TeacherDTO teacher, Connection connection, Response response, String query) {
+        PreparedStatement statement = null;
+        try {
+            
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, teacher.getId());
+            return statement.executeQuery();
+
+        } catch (Exception ex) {
+            response.messagesList.add(new Message(ex.getMessage(), MessageType.Exception));
+
+        }
+        return null;
+    }
+
+    ResultSet getCourse(CourseDTO course, Connection connection, Response response, String query) {
+        PreparedStatement statement = null;
+        try {
+            
+            statement = connection.prepareStatement(query);
+            statement.setString(1, course.getCourseCode());
+            return statement.executeQuery();
+
+        } catch (Exception ex) {
+            response.messagesList.add(new Message(ex.getMessage(), MessageType.Exception));
+
+        }
+        return null;
+    }
+
+    ResultSet getTeacherEmail(UserDTO user, Connection connection, Response response, String query) {
+        PreparedStatement statement = null;
+        try {
+            
+            statement = connection.prepareStatement(query);
+            statement.setString(1, user.getEmail());
+            return statement.executeQuery();
+
+        } catch (Exception ex) {
+            response.messagesList.add(new Message(ex.getMessage(), MessageType.Exception));
+
+        }
+        return null;
+    }
+
+    ResultSet getCourses(ClassDTO classObj, TeacherDTO teacher, Connection connection, Response response, String query) {
+    PreparedStatement statement = null;
+        try {
+            
+            statement = connection.prepareStatement(query);
+            statement.setInt(1, teacher.getId());
+            statement.setString(2, classObj.getClassId());
+            return statement.executeQuery();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            response.messagesList.add(new Message(ex.getMessage(), MessageType.Exception));
+
+        }
+        return null;    
+    
+    }
+
+    ResultSet getStudentResult(ClassDTO classObj, CourseDTO course, Connection connection, Response response, String query) {
+    PreparedStatement statement = null;
+        try {
+            
+            statement = connection.prepareStatement(query);
+            statement.setString(1, classObj.getClassId());
+            statement.setString(2, course.getCourseCode());
+            return statement.executeQuery();
+        } catch (Exception ex) {
+            System.out.println("Error in Reader"+ex.getMessage());
+            response.messagesList.add(new Message(ex.getMessage(), MessageType.Exception));
+
+        }
+        return null;     
+    }
+
 }

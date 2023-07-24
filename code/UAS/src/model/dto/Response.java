@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author fawad
+ * @author shamsa
  */
 public class Response {
     public ArrayList<Message> messagesList;
@@ -29,6 +29,18 @@ public class Response {
            if(sb.length() > 0) 
                sb.append(",\n");
             if(m.Type == MessageType.Error || m.Type == MessageType.Exception)
+                sb.append(m.Message);
+        }
+        return sb.toString();
+    }
+    
+    public String getInfoMessages() {
+        StringBuilder sb = new StringBuilder();    
+        for(Message m : messagesList)
+        {
+           if(sb.length() > 0) 
+               sb.append(",\n");
+            if(m.Type == MessageType.Information)
                 sb.append(m.Message);
         }
         return sb.toString();

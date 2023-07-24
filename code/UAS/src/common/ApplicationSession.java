@@ -1,42 +1,46 @@
 package common;
 
 import java.util.Date;
+import javax.swing.JFrame;
+import model.dto.UserDTO;
 
 public class ApplicationSession {
-    private String UserName;
-    private String role;
+
+    private UserDTO user;
     private Date sessionStartTime;
+    private JFrame currentScreen;
 
     public boolean isSessionExpired() {
         if (sessionStartTime == null) {
-            return true;    
+            return true;
         }
-        
+
         long currentTimeMillis = System.currentTimeMillis();
-        long sessionDurationMillis = 60 * 1000; // 20 minute in milliseconds
+        long sessionDurationMillis = 15 * 60 * 1000; // 15 minute in milliseconds
         long sessionEndTimeMillis = sessionStartTime.getTime() + sessionDurationMillis;
-        
+
         return currentTimeMillis > sessionEndTimeMillis;
     }
+
     public void startSession() {
-        
+
         sessionStartTime = new Date();
         System.out.println("Session Started");
     }
 
-    public String getUserName() {
-        return UserName;
+    public UserDTO getUser() {
+        return user;
     }
 
-    public String getRole() {
-        return role;
+    public void setUser(UserDTO user) {
+        this.user = user;
     }
 
-    public void setUserName(String UserName) {
-        this.UserName = UserName;
+    public JFrame getCurrentScreen() {
+        return currentScreen;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setCurrentScreen(JFrame currentScreen) {
+        this.currentScreen = currentScreen;
     }
 }

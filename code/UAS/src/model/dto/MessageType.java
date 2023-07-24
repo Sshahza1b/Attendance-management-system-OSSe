@@ -6,7 +6,7 @@ package model.dto;
 
 /**
  *
- * @author fawad
+ * @author shamsa
  */
 public enum MessageType {
     Information,
