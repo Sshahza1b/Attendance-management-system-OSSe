@@ -1,4 +1,4 @@
-How to run our project
+                                                    How to run Attendance Management System
 
 Step 1:
 
@@ -17,16 +17,27 @@ step 4:
 
 project show errors as we use built in laibries for our gui and for graps , time table etc
 
-so to solve these erros add laibries from external laibries folder 
+so to solve these erros add libraries from external  libraries folder 
 
-how to add these laibries
-click laibreis then select jar files and then add .
+how to add these libraries
+click libraries then select jar files and then add .
 
 step 4:
+for connecting database first of all you have to download mysql server (available free online) 
+after installling mysql server open it and install my sql workbench after your installation is fully completed
+open sql workbench then open our sql quries from my sql folder then connect it.
 
-open mysql:
+in netbeans: 
+we assume that you already download zip file of our project and copy the src folder in netbeans after this open services in netbeans(ctrl + f5)
+there you see database option at top click it and choose the option make connection select it it will prompt you sql drivers and your connections (from sqlserver)
+ username & password after you enter that you are connected to your db. just you have to add your 
 
-open our sql quries from my sql folder then connect it.
+ 1 : db name
+ 2: username 
+ 3: password
+
+ in our Db Manager file. Now your server is fully connected.
+
 
 by follow these steps you should run our project eaisly.
 
